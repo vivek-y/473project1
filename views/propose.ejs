@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <% include partials/head.ejs %>
+  </head>
+  <body class="default">
+    <% include partials/topnav.ejs %>
+
+    <div class="main container">
+      <% include partials/mainnav.ejs %>
+
+      <form class="form-horizontal well well-lg col-lg-10 col-lg-offset-1" method="post" action="/propose">
+        <fieldset>
+          <legend>Propose a Tweet</legend>
+          <textarea class="form-control" name="proposal" rows="5"></textarea>
+          <div class="form-group center pad">
+              <input type="submit" class="btn btn-primary" value="Submit">
+          </div>
+        </fieldset>
+      </form>
+
+    </div>
+
+    <% include partials/footer.ejs %>
+  </body>
+</html>

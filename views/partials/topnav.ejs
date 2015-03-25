@@ -1,0 +1,17 @@
+<div class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <a href="/" class="navbar-brand">Team 3 - Inestimable Circularity</a>
+    </div>
+    <div class="navbar-collapse collapse" id="navbar-main">
+        <ul class="nav navbar-nav navbar-right">
+          <% if(typeof currentuser !== 'undefined') { %>
+            <li><a>Welcome <%= currentuser.firstName %> <%= currentuser.lastName %></a></li>
+          <% } else { %>
+            <li><a href="/signup" target="_blank">Sign Up!</a></li>
+            <li><a href="/login" target="_blank">Login!</a></li>
+          <% } %>
+        </ul>
+    </div>
+  </div>
+</div>

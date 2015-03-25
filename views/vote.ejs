@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <% include partials/head.ejs %>
+  </head>
+  <body class="default">
+    <% include partials/topnav.ejs %>
+
+    <div class="main container">
+      <% include partials/mainnav.ejs %>
+
+      <div class="well well-lg col-lg-10 col-lg-offset-1">
+        <legend>Vote</legend>
+        <table class="table table-hover">
+          <tr>
+            <th>Author</th><th>Proposal</th><th><span class="glyphicon glyphicon-thumbs-up"></span></th><th><span class="glyphicon glyphicon-thumbs-down"></span></th><th>Action</th>
+          </tr>
+          <% proposal.forEach(function(item) { %>
+            <tr>
+              <td><%= item.author %></td><td><%= item.content %></td><td><%= item.upvote.length %></td><td><%= item.upvote.length %></td>
+
+              <% if(item.email === currentuser.email) { %>
+                <td>You are the author.</td>
+              <% } else { %>
+                <td><button class="btn btn-xs"><span class="glyphicon glyphicon-thumbs-up"></span> Approve</button> <button class="btn btn-xs"><span class="glyphicon glyphicon-thumbs-down"></span> Disapprove</button></td>
+              <% } %>
+            </tr>
+          <% }); %>
+        </table>
+      </div>
+
+    </div>
+
+    <% include partials/footer.ejs %>
+  </body>
+</html>

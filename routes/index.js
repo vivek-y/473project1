@@ -21,7 +21,7 @@ function authenticate(email, password) {
 }
 
 router.get('/', function(req, res) {
-	res.render('index');
+	res.render('propose');
 });
 
 router.get('/login', function(req, res) {
